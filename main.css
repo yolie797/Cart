@@ -591,16 +591,13 @@ main {
 
 .product-image {
     position: relative;
-    height: 62%;
+    height: 50%;
     background-color: #eee;
 }
 
 .product-image img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
+    height: 100%;
+    width: 50%;
 }
 
 .product-summary {

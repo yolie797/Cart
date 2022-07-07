@@ -5,7 +5,10 @@ if(!productsInCart){
 const parentElement = document.querySelector('#buyItems');
 const cartSumPrice = document.querySelector('#sum-prices');
 const products = document.querySelectorAll('.product-under');
-
+    
+function myFunction() {
+	alert("Item Added To cart");
+  }
 
 const countTheSumPrice = function () { // 4
 	let sum = 0;
@@ -20,22 +23,22 @@ const updateShoppingCartHTML = function () {  // 3
 	if (productsInCart.length > 0) {
 		let result = productsInCart.map(product => {
 			return `
-				<li class="buyItem">
-					<img src="${product.image}">
-					<div>
-						<h5>${product.name}</h5>
-						<h6>$${product.price}</h6>
-						<div>
-							<button class="button-minus" data-id=${product.id}>-</button>
-							<span class="countOfProduct">${product.count}</span>
-							<button class="button-plus" data-id=${product.id}>+</button>
-						</div>
-					</div>
-				</li>`
+			<li class="buyItem">
+			<img src="${product.image}">
+			<div>
+				<h5>${product.name}</h5>
+				<h6>R${product.price}</h6>
+				<div>
+					<button class="button-minus" data-id=${product.id}>-</button>
+					<span class="countOfProduct">${product.count}</span>
+					<button class="button-plus" data-id=${product.id}>+</button>
+				</div>
+			</div>
+		</li>`
 		});
 		parentElement.innerHTML = result.join('');
 		document.querySelector('.checkout').classList.remove('hidden');
-		cartSumPrice.innerHTML = '$' + countTheSumPrice();
+		cartSumPrice.innerHTML = 'R' + countTheSumPrice();
 
 	}
 	else {
